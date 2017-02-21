@@ -1,0 +1,35 @@
+.week-day {
+
+  background: white;
+  padding: 8px 12px;
+  border-top: 1px solid #bbb;
+  cursor: pointer;
+
+  &:last-child,
+  &:last-of-type {
+    border-bottom: 1px solid #bbb;
+  }
+
+  .date {
+    font-size: 1.2em;
+    padding: 4px 0 10px 0;
+    color: #222;
+  }
+
+  .plans-count {
+    color: #555;
+  }
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: lighten(#AED6F1, 15%);
+    color: white;
+  }
+
+  &:active {
+    background: lighten(#AED6F1, 10%);//#FF3232;
+    color: white;
+  }
+
+}
