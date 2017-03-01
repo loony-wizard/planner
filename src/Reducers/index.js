@@ -22,7 +22,8 @@ const initialState = {
 	weekInfo: weekdays,
 	selectedDay: {
 		key: fullDayKey, plans, dayString
-	}
+	},
+    weekIsOpened: false
 };
 
 function reducer(state = initialState, action) {
@@ -30,14 +31,16 @@ function reducer(state = initialState, action) {
         
         return {
         	selectedDay: state.selectedDay,
-        	weekInfo: getWeekdays(++numberOfWeekShift)
+        	weekInfo: getWeekdays(++numberOfWeekShift),
+            weekIsOpened: state.weekIsOpened
         };
 
     } else if (action.type === 'PREV_WEEK_BUTTON_WAS_PRESSED') {
         
         return {
         	selectedDay: state.selectedDay,
-        	weekInfo: getWeekdays(--numberOfWeekShift)
+        	weekInfo: getWeekdays(--numberOfWeekShift),
+            weekIsOpened: state.weekIsOpened
         };
 
     } else if (action.type === 'DAY_WAS_SELECTED') {
@@ -52,7 +55,8 @@ function reducer(state = initialState, action) {
             weekInfo: state.weekInfo,
             selectedDay: {
             	key, plans, dayString
-            }
+            },
+            weekIsOpened: false
         }
 
     } else if (action.type === 'NEW_PLAN_FORM_WAS_SUBMITTED') {
@@ -90,7 +94,8 @@ function reducer(state = initialState, action) {
     		selectedDay: {
     			...state.selectedDay,
     			plans
-    		}
+    		},
+            weekIsOpened: state.weekIsOpened
     	};
 
     } else if (action.type === 'PLAN_WAS_COMPLETED') {
@@ -120,7 +125,8 @@ function reducer(state = initialState, action) {
             selectedDay: {
                 ...state.selectedDay,
                 plans
-            }
+            },
+            weekIsOpened: state.weekIsOpened
         };
 
     } else if (action.type === 'REMOVE_PLAN_BUTTON_WAS_PRESSED') {
@@ -151,9 +157,16 @@ function reducer(state = initialState, action) {
             selectedDay: {
                 ...state.selectedDay,
                 plans
-            }
+            },
+            weekIsOpened: state.weekIsOpened
         };
 
+    } else if (action.type === 'CHOOSE_ANOTHER_DAY_BUTTON_WAS_PRESSED') {
+        return {
+            weekInfo: state.weekInfo,
+            selectedDay: state.selectedDay,
+            weekIsOpened: true
+        }
     } else {
         return state;
     }

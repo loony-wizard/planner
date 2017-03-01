@@ -2,16 +2,18 @@
 
   background: white;
   padding: 8px 12px;
-  border-top: 1px solid #bbb;
+  border-top: 1px solid #dee2e6;
   cursor: pointer;
 
   &:last-child,
   &:last-of-type {
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #dee2e6;
   }
 
   .date {
-    font-size: 1.2em;
+    font-family: 'PT-Sans', 'Open Sans Condensed', sans-serif;
+    font-size: 1.15em;
+    font-weight: 300;
     padding: 4px 0 10px 0;
     color: #222;
   }
@@ -20,15 +22,15 @@
     color: #555;
   }
 
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
 
   &:hover {
-    background: lighten(#AED6F1, 15%);
+    background: #FFECE9;
     color: white;
   }
 
   &:active {
-    background: lighten(#AED6F1, 10%);//#FF3232;
+    background: #FFCEC8;//#FF3232;
     color: white;
   }
 

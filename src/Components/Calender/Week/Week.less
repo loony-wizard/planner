@@ -2,26 +2,27 @@
 
   .next-week-btn,
   .prev-week-btn {
+    font-family: 'PT-Sans', 'Open Sans Condensed', sans-serif;
     background: white;
-    margin: 10px;
-    border: 1px solid #bbb;
+    margin: 10px 50px;
+    border: 1px solid #adb5bd;
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    color: #555;
+    color: #495057;
     font-size: 1.1em;
-    padding: 10px;
+    padding: 7px;
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #2874A6; //#85C1E9;
-      background: #2874A6; // #85C1E9;
+      border-color: #f03e3e; //#85C1E9;
+      background: #f03e3e; // #85C1E9;
       color: white;
     }
 
     &:active {
-      border-color: #5DADE2;
-      background: #5DADE2;//#FF3232;
+      border-color: darken(#f03e3e, 30%);
+      background: darken(#f03e3e, 30%);//#FF3232;
       color: white;
     }
   }
@@ -30,13 +31,13 @@
 
     .tags {
       .tag {
-        background: #888;
+        background: #f03e3e;
         font-size: 0.9em;
         color: white;
         margin: 4px;
-        padding: 3px 4px;
+        padding: 1px 8px;
         display: inline-block;
-        border-radius: 3px;
+        border-radius: 10px;
       }
     }
 

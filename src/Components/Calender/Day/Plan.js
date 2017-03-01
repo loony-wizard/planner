@@ -16,15 +16,16 @@ class Plan extends React.Component {
     render() {
 
         const status = this.props.completed ? 
-            <div><img src="images/completed.png" /></div> :
+            <div className="complete completed" >Завершено</div> :
             <div onClick={this.complete.bind(this)} className="complete" >Завершить</div>;
-
+        const tags = this.props.tags.length === 0 ?
+            "" : <div className="tags">{this.props.tags}</div>;   
         return (
             <div className="plan">
-                <div className="is-completed">{status}</div>
-                <img className="delete" src="images/remove-blue.png" onClick={this.remove.bind(this)} data-description="Удалить план"/>
+                {status}
+                <div className="delete" onClick={this.remove.bind(this)}>Удалить</div>
                 <div className="text">{this.props.text}</div>
-                <div className="tags">{this.props.tags}</div>
+                {tags}
             </div>
         );
 

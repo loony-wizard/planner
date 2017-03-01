@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 require('./App.less');
 
 import Nav from "./Nav";
-import Footer from "./Footer";
 
 class App extends React.Component {
 
@@ -13,7 +12,6 @@ class App extends React.Component {
             <div className="app">
                 <Nav />
                 {this.props.children}
-                <Footer />
             </div>
         );
     }

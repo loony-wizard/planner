@@ -15,7 +15,7 @@ class Week extends React.Component {
         }
         //console.log(this.props.store);
         return (
-            <div className="week-container">
+            <div>
                 <div className="next-week-btn" onClick={this.props.onNextWeekButtonWasPressed}>Следующая неделя</div>
                 <div className="days-container">{days}</div>
                 <div className="prev-week-btn" onClick={this.props.onPrevWeekButtonWasPressed}>Предыдущая неделя</div>
